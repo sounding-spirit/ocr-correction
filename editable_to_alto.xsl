@@ -4,8 +4,10 @@
     xpath-default-namespace="http://www.loc.gov/standards/alto/ns-v2#"
     exclude-result-prefixes="xs"
     version="2.0">
-    <xsl:output omit-xml-declaration="yes" indent="yes"/>
+    <xsl:output indent="yes"/>
     <xsl:strip-space elements="*"/>
+    
+    <xsl:template match="processing-instruction('xml-stylesheet')"/>
     
     <xsl:template match="node()|@*">
         <xsl:copy>
